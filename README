@@ -1,0 +1,6 @@
+Goals: 
+1. Combine images for all parts of the outfit, using Image Magick. Text can be overlayed to communicate with the user. Python can call this program. 
+2. Get the graphical user interface working. Make the device user friendly.
+3. Eliminate the need for the user to input their username by using $whoami. 
+4. Possibly incorporate facial recognition/identification. 
+5. Add way for user to import pictures of their wardrobe. 
