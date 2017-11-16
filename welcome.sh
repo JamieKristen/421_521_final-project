@@ -16,6 +16,7 @@ raspistill  -o $username.jpg
 temp=$(grep Temperature weather.txt| cut -c17-20)
 cloudy=$(grep -c cloudy weather.txt)
 sunny=$(grep -c sunny weather.txt)
+
 echo athletic or regular clothes?
 read type
 echo $type
@@ -34,7 +35,7 @@ then
 fi
 if [ $temp > 75 ]
 then
-	if [$type = regular]
+	if [$type == regular]
 		then
 		echo Try this outfit	
 		R=$((RANDOM % 3 + 1 ))
@@ -47,7 +48,7 @@ then
 		pqiv montage.jpg
 	fi
 else
-	if [$type = regular]
+	if [$type == regular]
 		then
 		echo hello
 		echo Try this outfit
