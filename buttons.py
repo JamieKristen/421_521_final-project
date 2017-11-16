@@ -7,7 +7,7 @@ top = Tkinter.Tk()
 def helloCallBack() :
 	tkMessageBox.showinfo( "Clothing", "Thanks for updating your wardrobe!")
 def goShopping() :
-	tkMessageBox.showinfo( "What are we looking for today?", "Click here!")
+	tkMessageBox.showinfo( "What are we looking for today?", "Click here to continue!")
 
 v = Tkinter.Button (top, text ="Let's Shop!", command = goShopping)
 w = Tkinter.Button (top, text ="Dress Me!", command = helloCallBack)
