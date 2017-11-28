@@ -40,7 +40,7 @@ then
 		echo Try this outfit
 			
 		R=$((RANDOM % 3 + 1 ))
-		convert +append clothes/Warm/Regular/Tops$R.JPG clothes/Warm/Regular/Bottoms/$R.JPG montage.jpg 
+		convert +append clothes/Warm/Regular/Tops/$R.JPG clothes/Warm/Regular/Bottoms/$R.JPG montage.jpg 
 		pqiv montage.jpg
 	else 
 		echo Try this outfit
