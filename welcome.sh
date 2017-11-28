@@ -35,9 +35,10 @@ then
 fi
 if [ $temp > 75 ]
 then
-	if [$type == regular]
+	if [ $type == regular ]
 		then
-		echo Try this outfit	
+		echo Try this outfit
+			
 		R=$((RANDOM % 3 + 1 ))
 		convert +append clothes/Warm/Regular/Tops$R.JPG clothes/Warm/Regular/Bottoms/$R.JPG montage.jpg 
 		pqiv montage.jpg
@@ -48,13 +49,26 @@ then
 		pqiv montage.jpg
 	fi
 else
-	if [$type == regular]
+	if [ $type == regular ]
 		then
 		echo hello
 		echo Try this outfit
-		R=$(( RANDOM % 3 + 1 ))
-		convert +append clothes/Cold/Regular/Jackets/$R.JPG  clothes/Cold/Regular/Tops/$R.JPG montage.jpg
-		convert +append montage.jpg clothes/Cold/Regular/Bottoms/$R.JPG montage.jpg
+		cd clothes/Cold/Regular/Jackets
+		number=$(ls -la | grep -c JPG ) 
+		echo $number	
+		R=$(( RANDOM % $number + 1 ))
+		cd ..
+		cd Tops
+		number2=$(ls -la | grep -c JPG )
+		R2=$(( RANDOM % $number2 + 1 ))
+		cd ..
+		cd Bottoms
+		number3=$(ls -la | grep -c JPG )
+		R3=$(( RANDOM % $number3 + 1 ))
+		cd ~
+		cd 421_521_final-project
+		convert +append clothes/Cold/Regular/Jackets/$R.JPG  clothes/Cold/Regular/Tops/$R2.JPG montage.jpg
+		convert +append montage.jpg clothes/Cold/Regular/Bottoms/$R3.JPG montage.jpg
 		pqiv  montage.jpg
 	else
 		echo Try this outfit
