@@ -159,17 +159,17 @@ text(myString3, 200, 190);
 fill(0, 102, 153);
 //load an image
 if (num == "") {
-  //img = loadImage("/Users/jamieleong/Desktop/image2.JPG");
-  //image(img, 300, 210);
+  img = loadImage("/home/pi/421_521_final-project/clothes/white.jpg");
+  image(img, 300, 210);
 }
 // if the user wants to wear athletic or regular clothes
 if (num == "Athletic") {
   //get number of files in each folder
-    File theDir = new File("/Users/jamieleong/Desktop/" + dressweather + "/Athletic/Top"); //get all files in the folder
+    File theDir = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Athletic/Tops"); //get all files in the folder
     String[] theList = theDir.list();
     int fileCount = theList.length; //get number of files
     //get new file count
-    File theDir2 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Athletic/Top");
+    File theDir2 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Athletic/Tops");
    String[] theList2 = theDir2.list();
    int fileCount2 = theList2.length;
    
@@ -177,7 +177,7 @@ if (num == "Athletic") {
   for (int i = 0; i < 3; i++) {
     rand = int(random(1,fileCount)); //pick an oufit based on the number of files in the folders
     rand2 = int(random(1,fileCount2));
-    String [] check = loadStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt");
+    String [] check = loadStrings("/home/pi/421_521_final-project/Processing_421/nouns.txt");
  //check to see if you are picking the same clothing pieces
     for (int j = 0 ; j < check.length; j++) {
       println(check[i]);
@@ -196,9 +196,11 @@ if (num == "Athletic") {
     }
   }
       img = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Tops/" + rand + ".JPG");
-      image(img, 300, 210);
+      img.resize(100,200);
+      image(img, 300, 400);
       img2 = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Bottoms/" + rand2 + ".JPG");
-      image(img2, 300, 310);
+      img2.resize(100,200);
+      image(img2, 300, 600);
       //put the file numbers back
       list[0] = str(rand);
       list [1] = str(rand2);
@@ -212,19 +214,19 @@ if (num == "Athletic") {
 else if (num == "Regular" && dressweather == "Cold") {
   
     //get number of files in each folder
-    File theDir3 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Top");
+    File theDir3 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Tops");
     String[] theList3 = theDir3.list();
     int fileCount3 = theList3.length;
     //get new file count
-    File theDir4 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Bottom");
+    File theDir4 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Bottoms");
    String[] theList4 = theDir4.list();
    int fileCount4 = theList4.length;
      //get number of files in each folder
-    File theDir5 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Jacket");
+    File theDir5 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Jackets");
     String[] theList5 = theDir5.list();
     int fileCount5 = theList5.length;
     //get new file count
-    File theDir6 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Dress");
+    File theDir6 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Dresses");
    String[] theList6 = theDir6.list();
    int fileCount6 = theList6.length;
    
@@ -233,7 +235,7 @@ else if (num == "Regular" && dressweather == "Cold") {
     rand2 = int(random(1,fileCount4));
     rand3 = int(random(1,fileCount5));
     rand4 = int(random(1,fileCount6));
-    String [] check = loadStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt");
+    String [] check = loadStrings("/home/pi/421_521_final-project/Processing_421/nouns.txt");
  
     for (int j = 0 ; j < check.length; j++) {
       println(check[i]);
@@ -264,13 +266,17 @@ else if (num == "Regular" && dressweather == "Cold") {
     }
   }
       img = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Tops/" + rand + ".JPG");
-      image(img, 300, 210);
+      img.resize(100, 200);
+      image(img, 300, 400);
       img2 = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Bottoms/" + rand2 + ".JPG");
-      image(img2, 300, 310);
+      img2.resize(100, 200);
+      image(img2, 300, 600);
       img3 = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Jackets/" + rand3 + ".JPG");
-      image(img3, 400, 210);
+      img3.resize(100, 200);
+      image(img3, 400, 400);
       img4 = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Dresses/" + rand4 + ".JPG");
-      image(img4, 400, 310);
+      img4.resize(100, 200);
+      image(img4, 400, 600);
 list[0] = str(rand);
 list [1] = str(rand2);
 list [2] = str(rand3);
@@ -278,21 +284,21 @@ list [3] = str(rand4);
 //String[] words = split(list,' ');
 
 // Writes the strings to a file, each on a separate line
-saveStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt", list);
+saveStrings("/home/pi/421_521_final-project/Processing_421/nouns.txt", list);
 }
 
 else if (num == "Regular" && dressweather == "Warm") {
   
     //get number of files in each folder
-    File theDir3 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Top");
+    File theDir3 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Tops");
     String[] theList3 = theDir3.list();
     int fileCount3 = theList3.length;
     //get new file count
-    File theDir4 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Bottom");
+    File theDir4 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Bottoms");
    String[] theList4 = theDir4.list();
    int fileCount4 = theList4.length;
     //get new file count
-    File theDir6 = new File("/Users/jamieleong/Desktop/" + dressweather + "/Regular/Dress");
+    File theDir6 = new File("/home/pi/421_521_final-project/clothes/" + dressweather + "/Regular/Dresses");
    String[] theList6 = theDir6.list();
    int fileCount6 = theList6.length;
    
@@ -300,7 +306,7 @@ else if (num == "Regular" && dressweather == "Warm") {
     rand = int(random(1,fileCount3));
     rand2 = int(random(1,fileCount4));
     rand4 = int(random(1,fileCount6));
-    String [] check = loadStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt");
+    String [] check = loadStrings("/home/pi/421_521_final-project/Processing_421/nouns.txt");
  
     for (int j = 0 ; j < check.length; j++) {
       println(check[i]);
@@ -325,18 +331,21 @@ else if (num == "Regular" && dressweather == "Warm") {
     }
   }
       img = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Tops/" + rand + ".JPG");
-      image(img, 300, 210);
+      img.resize(100, 200);
+      image(img, 300, 400);
       img2 = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Bottoms/" + rand2 + ".JPG");
-      image(img2, 300, 310);
+      img2.resize(100, 200);
+      image(img2, 300, 600);
       img4 = loadImage("/home/pi/421_521_final-project/clothes/" + dressweather + "/" + num + "/Dresses/" + rand4 + ".JPG");
-      image(img4, 400, 310);
+      img4.resize(100, 200);
+      image(img4, 400, 400);
 list[0] = str(rand);
 list [1] = str(rand2);
 list [3] = str(rand4);
 //String[] words = split(list,' ');
 
 // Writes the strings to a file, each on a separate line
-saveStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt", list);
+saveStrings("/home/pi/421_521_final-project/Processing_421/nouns.txt", list);
 }
 
     
@@ -375,7 +384,7 @@ saveStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt", list);
    val = int(lines[0]);
    if (val > 75) {
      myString2 = ("It's " + val + " degrees out, make sure to bring sunscreen!");
-     myString3 = ("Atheltic or Regular Clothes?");
+     myString3 = ("Athletic or Regular Clothes?");
      dressweather = ("Warm");
    }
    else {
@@ -400,38 +409,35 @@ saveStrings("/Users/jamieleong/Documents/Processing/project/nouns.txt", list);
 void keyPressed(){
   text1+= key;
   myString = "Hi, " + text1;
-  String[] lines = loadStrings("/Users/jamieleong/Desktop/output.rtf");
+  String[] lines = loadStrings("/home/pi/421_521_final-project/Processing_421/output.rtf");
  println(lines.length);
   if (keyCode == ENTER) {
-    println("hi");
      if (lines.length == 0) {
         //output[output.length+1] = myString + "/";
-        println("yellow");
         lines = append(lines, text1);
-        println(lines);
 
        }
       else {
         for (int i = 7; i < lines.length; i++) {
           if (lines[i] == text1 + "/") {
              myString = "Welcome back, " + text1;
-             println("yo");
           } 
           else {
              myString = "Hi, " + text1;
-             println("sam");
              lines = append(lines, text1);
-              output.println(myString);
-              output.flush();
-              output.close();
+            
           }
         }}}
       if (keyCode == ENTER && camera == 1) {
-        saveFrame("/Users/jamieleong/Desktop/" + weather + "/" + type + "/" + clothing + "/1.png");
+            File theDir7 = new File("/home/pi/421_521_final-project/clothes/" + weather + "/" + type + "/" + clothing);
+           String[] theList7 = theDir7.list();
+           int fileCount7 = theList7.length + 1;
+        saveFrame("/home/pi/421_521_final-project/clothes/" + weather + "/" + type + "/" + clothing + "/" + fileCount7 + ".png");
         
       }
 }
 
+//Get all radio buttons
 void controlEvent(ControlEvent theEvent) {
   if(theEvent.isGroup() && theEvent.name().equals("radio")) {
     if (theEvent.arrayValue()[0]== 1.0) {
